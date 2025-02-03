@@ -42,21 +42,12 @@ sentiment-analysis-tool
 
 ## Classify data
 
-The custom classifier is trained using human classified data. To classify the data, excecute the following command:
-
-```
-python src/classify_data.py
-```
-
+The custom classifier is trained using human classified data. To classify the data, open classify_data.py in your prefered IDE like PyCharm or Visual Studio Code and run custom src/data_processing.py
 and follow the instructions in the terminal. Once the classification is done, the classifier is stored under the name us_economy_sentiment_model.joblib. A file named 'data.csv' is generated with the trained data
 
 ## Usage
 
-To run the sentiment analysis tool, execute the following command:
-
-```
-python src/main.py
-```
+To run the sentiment analysis tool, run the file src/main.py
 
 You need to generate a build classifier first
 
