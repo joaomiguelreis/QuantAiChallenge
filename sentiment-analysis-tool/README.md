@@ -1,6 +1,6 @@
 # Sentiment Analysis Tool
 
-This project is a sentiment analysis tool designed to analyze financial news articles, research reports, and earnings call transcripts, specifically focusing on "recession fears" in the US equity markets. It utilizes a large language model API to generate sentiment scores that help in understanding market sentiments related to economic downturns.
+This project is a sentiment analysis tool designed to analyze financial news articles, research reports, and earnings call transcripts, specifically focusing on "recession fears" in the US equity markets. It utilizes two LLM - Hugging Face and TextBolb API - as well as a custom sentiment classifier designed by myself. This code generates sentiment scores that help in understanding market sentiments related to economic downturns.
 
 ## Features
 
@@ -14,11 +14,12 @@ This project is a sentiment analysis tool designed to analyze financial news art
 sentiment-analysis-tool
 ├── src
 │   ├── main.py                # Entry point of the application
-│   ├── sentiment_analysis.py   # Contains the SentimentAnalyzer class
-│   ├── data_processing.py      # Functions for data processing and cleaning
-│   ├── api_client.py           # Handles API communication
+│   ├── classify_data.py       # To classify the data used to train the custom classifier
 │   └── utils
-│       └── __init__.py        # Utility functions and constants
+│       ├── __init__.py        # Utility functions and constants
+│       ├── sentiment_analysis.py  # Sentiment analysis utilities
+│       ├── data_processing.py     # Data processing utilities
+│       └── classifier.py          # Custom classifier utilities
 ├── requirements.txt            # Project dependencies
 ├── config.yaml                 # Configuration settings
 └── README.md                   # Project documentation
@@ -39,6 +40,16 @@ sentiment-analysis-tool
 
 3. Configure the application by editing the `config.yaml` file with your API keys and settings.
 
+## Classify data
+
+The custom classifier is trained using human classified data. To classify the data, excecute the following command:
+
+```
+python src/classify_data.py
+```
+
+and follow the instructions in the terminal. Once the classification is done, the classifier is stored under the name us_economy_sentiment_model.joblib. A file named 'data.csv' is generated with the trained data
+
 ## Usage
 
 To run the sentiment analysis tool, execute the following command:
@@ -47,10 +58,10 @@ To run the sentiment analysis tool, execute the following command:
 python src/main.py
 ```
 
-## Contributing
+You need to generate a build classifier first
 
-Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
+## Output
+A plot with the sentiment over time predicted by the three models: Hugging Face, TextBolb and the custom classifier
 
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
+## Acknowledges
+I could not have done this without CoPilot. If only I had this tool during my Ph.D....
