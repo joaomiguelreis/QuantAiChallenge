@@ -1,0 +1,24 @@
+# api_key: "3b0b7525822642fc9dba778c9a8e2ac4"
+api_key : "d5eceffa37424d74b42c88c2f84301cd"
+api_url: "https://newsapi.org/v2"
+path_to_data: "data.csv"
+query: "US economy"
+# model: "gpt-3.5-turbo"
+timeout: 30
+recession_fear_keywords:
+  - "recession"
+  - "economic downturn"
+  - "market crash"
+  - "financial crisis"
+  - "slowdown"
+  - "bear market"
+growth_greed_keywords:
+  - "economic boom"
+  - "market rally"
+  - "bull market"
+  - "economic growth"
+  - "economic expansion"
+  - "economic recovery"
+  - "economic upturn"
+default_sentiment_threshold: 0.5
+log_level: "INFO"
